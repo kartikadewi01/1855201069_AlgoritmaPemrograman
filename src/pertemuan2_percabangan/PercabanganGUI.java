@@ -27,21 +27,119 @@ public class PercabanganGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        inputNilai = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        outputNilai = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        button = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        inputNilai.setText("Masukan Nilai");
+        inputNilai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNilaiActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Masukkan Nilai : ");
+
+        outputNilai.setText("MasukanNilai");
+
+        jLabel3.setText("Kamu Mendapatkan Nilai :");
+
+        button.setText("Hitung");
+        button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(outputNilai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(inputNilai, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(button)))))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputNilai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(button))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(outputNilai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void inputNilaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNilaiActionPerformed
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_inputNilaiActionPerformed
+
+    private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed
+        // TODO add your handling code here:
+
+        int nilai = Integer.parseInt(inputNilai.getText());
+
+        if (nilai >= 91 && nilai <= 100) {
+            outputNilai.setText("A");
+        }
+        else if (nilai >= 86 & nilai <= 90) {
+            outputNilai.setText("A-");
+        }
+        else if (nilai >= 81 & nilai <= 85) {
+            outputNilai.setText("B+");
+        }
+        else if (nilai >= 75 & nilai <= 80) {
+            outputNilai.setText("B");
+        }
+        else if (nilai >= 71 & nilai <= 75) {
+            outputNilai.setText("B-");
+        }
+        else if (nilai >= 70 & nilai <= 70) {
+            outputNilai.setText("C+");
+        }
+        else if (nilai >= 61 & nilai <= 65) {
+            outputNilai.setText("C");
+        }
+        else if (nilai >= 56 & nilai <= 60) {
+            outputNilai.setText("C-");
+        }
+        else if (nilai >= 51 & nilai <= 55) {
+            outputNilai.setText("D");
+        }
+        else if (nilai >= 0 & nilai <= 50) {
+            outputNilai.setText("E");
+        }
+        
+        
+    }//GEN-LAST:event_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +177,10 @@ public class PercabanganGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button;
+    private javax.swing.JTextField inputNilai;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField outputNilai;
     // End of variables declaration//GEN-END:variables
 }
