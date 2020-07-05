@@ -246,7 +246,7 @@ public class PemutarMusik extends javax.swing.JFrame {
         // TODO add your handling code here:
         File filenya;
         JFileChooser chooser = new JFileChooser(".");
-        chooser.setFileFilter(new FileNameExtensionFilter(".wav", ".mp3", "wav", "mp3"));
+        chooser.setFileFilter(new FileNameExtensionFilter(".mp3", ".wav", "mp3", "wav"));
         int buka_dialog = chooser.showOpenDialog(PemutarMusik.this);
         if (buka_dialog == JFileChooser.APPROVE_OPTION) {
             filenya = chooser.getSelectedFile();
