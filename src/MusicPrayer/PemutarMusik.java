@@ -13,7 +13,6 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import jaco.mp3.player.MP3Player;
 
@@ -81,8 +80,8 @@ public class PemutarMusik extends javax.swing.JFrame {
 
     }
 
-    public void stopWav() 
-            {
+    public void stopWav() {
+       //fungsi menghentikan file wav yang diputar
         currentFrame = 0L;
         clip.stop();
         clip.close();
@@ -204,9 +203,10 @@ public class PemutarMusik extends javax.swing.JFrame {
 
     private void mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainActionPerformed
         // TODO add your handling code here:
-        cari.setEnabled(false);
+        //jika file berekstesi wav maka akan menjalankan fungsi play wav
         if (".wav".equals(fileExtention)) {
             playWav();
+        //selain itu akan menjalankan pemutar mp3
         } else {
             player.play();
         }
@@ -225,11 +225,6 @@ public class PemutarMusik extends javax.swing.JFrame {
 
     private void stopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopActionPerformed
         // TODO add your handling code here:
-        lokasi.setText("Silahkan Cari Audio");
-        main.setEnabled(false);
-        jeda.setEnabled(false);
-        stop.setEnabled(false);
-        cari.setEnabled(true);
         if (".wav".equals(fileExtention)) {
             try {
                 stopWav();
@@ -245,9 +240,9 @@ public class PemutarMusik extends javax.swing.JFrame {
     private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
         // TODO add your handling code here:
         File filenya;
-        JFileChooser chooser = new JFileChooser(".");
-        chooser.setFileFilter(new FileNameExtensionFilter(".mp3", ".wav", "mp3", "wav"));
-        int buka_dialog = chooser.showOpenDialog(PemutarMusik.this);
+        JFileChooser chooser = new JFileChooser("."); //komponen untuk membuka file
+        chooser.setFileFilter(new FileNameExtensionFilter(".mp3", ".wav", "mp3", "wav")); //hanya menyaring file wav dan mp3
+        int buka_dialog = chooser.showOpenDialog(PemutarMusik.this); //mentriger popup windows
         if (buka_dialog == JFileChooser.APPROVE_OPTION) {
             filenya = chooser.getSelectedFile();
             filePath = filenya.getAbsolutePath();
@@ -256,12 +251,11 @@ public class PemutarMusik extends javax.swing.JFrame {
                 fileExtention = fileName.substring(fileName.lastIndexOf("."), fileName.length());
                
                     lokasi.setText(fileName);
-                    main.setEnabled(true);
-                    jeda.setEnabled(true);
-                    stop.setEnabled(true);
                     if (".wav".equals(fileExtention)) {
+                        // memasukkan file wav
                         WavPlayer();
                     } else {
+                        //menambahkan file mp3 kedalam playlist
                         player.addToPlayList(chooser.getSelectedFile());
                     }
                 
