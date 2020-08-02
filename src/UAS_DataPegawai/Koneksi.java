@@ -27,11 +27,11 @@ public class Koneksi {
 
     public void koneksi() {
         try {
-            String connectionURL = "jdbc:mysql://localhost/data";
+            String connectionURL = "jdbc:mysql://localhost/data"; // alamat database
             String username = "root";
             String password = "";
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(connectionURL, username, password);
+            Class.forName("com.mysql.jdbc.Driver"); 
+            con = DriverManager.getConnection(connectionURL, username, password); //menyambungkan ke database
             
            
             statusKoneksi = "Terhubung";

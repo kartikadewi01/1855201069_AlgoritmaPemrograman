@@ -23,7 +23,7 @@ public class Insert {
             konek.koneksi();
             Statement statement = konek.con.createStatement();
 
-            String sql = "INSERT INTO `identitasdua`(`id_pegawai`, `nama`, `tempat_tanggal_lahir`, `jabatan`, `alamat`, `nomor_telpon`, `keterangan_aktif_nonreaktif`) VALUES ('" + id + "', '" + nama + "','" + ttl + "','" + jabatan + "','" + alamat + "','" + no + "','" + ket + "')";
+            String sql = "INSERT INTO `identitasdua`(`id_pegawai`, `nama`, `tempat_tanggal_lahir`, `jabatan`, `alamat`, `nomor_telepon`, `keterangan`) VALUES ('" + id + "', '" + nama + "','" + ttl + "','" + jabatan + "','" + alamat + "','" + no + "','" + ket + "')";
 
             statement.executeUpdate(sql);
             statement.close();
